@@ -17,7 +17,7 @@ export class FactoryFunction {
 
   getParameters() {
     const params = this.declaration.getParameters().map(p => new TsParameter(this.factory, this, p));
-    if (this.getName() === nameof(ts.createNumericLiteral)) {
+    if (this.getName() === "createNumericLiteral") {
       return params.filter(p => p.getName() !== "numericLiteralFlags");
     }
     if (this.getName() === nameof(ts.createStringLiteral)) {
